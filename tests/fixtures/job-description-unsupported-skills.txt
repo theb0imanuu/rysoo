@@ -1,0 +1,9 @@
+Position: Lead Rust & Blockchain Core Engineer
+Company: Web3 Quantum Systems
+
+Requirements:
+- 6+ years of systems programming in Rust.
+- Core consensus protocol development for Solana and Ethereum.
+- Haskell formal verification.
+- Quantum cryptography and post-quantum algorithm research.
+- PhD in Theoretical Cryptography.

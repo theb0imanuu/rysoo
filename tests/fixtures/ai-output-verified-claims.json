@@ -1,0 +1,10 @@
+{
+  "tailoredMarkdown": "# Jane Doe\nExperienced Senior Software Engineer with 7+ years building scalable Java/Spring Boot microservices...",
+  "extractedClaims": {
+    "employers": ["CloudScale Inc.", "FinTech Innovations"],
+    "degrees": ["Bachelor of Science in Computer Science - University of Texas at Austin"],
+    "skills": ["Java 17/21", "Spring Boot", "PostgreSQL", "Docker", "AWS", "JUnit 5", "Mockito"]
+  },
+  "expectedFactCheck": "PASSED",
+  "expectedViolations": []
+}

@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Rysoo",
+    "slug": "rysoo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0F172A"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.theb0imanuu.rysoo"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logo.png",
+        "backgroundColor": "#0F172A"
+      },
+      "package": "com.theb0imanuu.rysoo"
+    },
+    "web": {
+      "favicon": "./assets/favicon.ico"
+    }
+  }
+}

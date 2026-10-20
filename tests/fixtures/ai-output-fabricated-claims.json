@@ -1,0 +1,14 @@
+{
+  "tailoredMarkdown": "# Jane Doe\nPh.D. in Quantum Cryptography from MIT (2020)\n10 years of Rust and Solana smart contract engineering...",
+  "extractedClaims": {
+    "employers": ["CloudScale Inc.", "FinTech Innovations", "Solana Foundation (Fabricated)"],
+    "degrees": ["Bachelor of Science in Computer Science - UT Austin", "Ph.D. in Quantum Cryptography - MIT (Fabricated)"],
+    "skills": ["Java", "Spring Boot", "Rust (Fabricated)", "Solana (Fabricated)"]
+  },
+  "expectedFactCheck": "FAILED",
+  "expectedViolations": [
+    "Degree 'Ph.D. in Quantum Cryptography - MIT' is not present in source CV",
+    "Employer 'Solana Foundation' is not present in source CV",
+    "Skill 'Rust' is not present in source CV"
+  ]
+}

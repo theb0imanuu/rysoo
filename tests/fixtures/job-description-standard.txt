@@ -1,0 +1,25 @@
+Position: Senior Backend Engineer
+Company: Global Cloud Platforms
+Location: Remote / San Francisco, CA
+
+About the Role:
+We are looking for a Senior Backend Engineer to join our core distributed systems team. You will lead the design and implementation of resilient, high-volume RESTful services, database optimizations, and containerized cloud services.
+
+Responsibilities:
+- Design, build, and maintain high-throughput backend microservices in Java and Spring Boot.
+- Optimize relational database queries, schemas, and connection pools in PostgreSQL.
+- Build containerized applications using Docker and manage deployments with automated CI/CD pipelines in GitHub Actions.
+- Collaborate with frontend engineers to build well-documented OpenAPI REST endpoints.
+- Champion engineering best practices, code reviews, and comprehensive unit/integration testing.
+
+Requirements:
+- 5+ years of production experience developing backend services in Java (Java 17/21).
+- Deep knowledge of Spring Boot, Spring Security, Hibernate/JPA, and SQL.
+- Strong hands-on experience with PostgreSQL performance tuning and migrations.
+- Solid experience containerizing applications with Docker.
+- Experience writing automated tests using JUnit and Mockito.
+- Excellent communication and collaboration skills.
+
+Nice to Have:
+- AWS certification or practical experience deploying to AWS services.
+- Experience with OAuth2 and JWT token validation.

@@ -1,0 +1,95 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  checks: write
+
+jobs:
+  backend-validation:
+    name: Java / Spring Boot CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Compile and run backend tests
+        run: |
+          mvn -B clean test
+
+      - name: Verify multi-stage Docker build
+        run: |
+          docker build -t rysoo-backend:test .
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-test-reports
+          path: '**/target/surefire-reports/*.xml'
+
+  web-validation:
+    name: Web Frontend (React + Vite) CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Typecheck contracts package
+        run: npm run typecheck --workspace=packages/contracts
+
+      - name: Typecheck web app
+        run: npm run typecheck --workspace=apps/web
+
+      - name: Run web unit tests
+        run: npm run test --workspace=apps/web
+
+      - name: Build web production bundle
+        run: npm run build --workspace=apps/web
+
+  mobile-validation:
+    name: Mobile App (React Native + Expo) CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Typecheck mobile app
+        run: npm run typecheck --workspace=apps/mobile
+
+      - name: Run mobile unit tests
+        run: npm run test --workspace=apps/mobile

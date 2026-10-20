@@ -1,0 +1,12 @@
+.git
+.github
+.agents
+node_modules
+target
+apps/web
+apps/mobile
+.env
+.env.*
+*.log
+docs
+tests
