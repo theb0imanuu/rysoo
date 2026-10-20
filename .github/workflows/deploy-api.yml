@@ -23,6 +23,8 @@ jobs:
   deploy-api:
     name: Build Docker & Trigger Render API Deployment
     runs-on: ubuntu-latest
+    env:
+      RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_API_DEPLOY_HOOK_URL }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -57,9 +59,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Trigger Render API Deploy Hook
-        if: ${{ secrets.RENDER_API_DEPLOY_HOOK_URL != '' }}
-        env:
-          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_API_DEPLOY_HOOK_URL }}
+        if: env.RENDER_DEPLOY_HOOK != ''
         run: |
           echo "Triggering Render API deployment..."
           curl -f -X POST "${RENDER_DEPLOY_HOOK}"
