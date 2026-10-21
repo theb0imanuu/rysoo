@@ -74,20 +74,33 @@ Supabase provides the managed PostgreSQL database, authentication service, and p
    - **anon / public key**: `eyJhbGciOi...` (used by Vercel frontend)
    - **service_role key** (Secret): `eyJhbGciOi...` (click reveal; used exclusively by Render backend)
 
-### 1.3 Retrieve PostgreSQL Database Connection Details
-1. In **Project Settings**, click **Database**.
-2. Scroll to the **Connection parameters** section:
-   - **Host**: `db.<your-project-ref>.supabase.co`
-   - **Database name**: `postgres`
-   - **Port**: `5432` (or `6543` if using Session/Transaction Pooler)
-   - **User**: `postgres` (or `postgres.<your-project-ref>` for pooler)
-   - **Password**: The database password you set in step 1.1.
-3. Formulate your JDBC connection string:
+### 1.3 Retrieve PostgreSQL Database Connection Details (CRITICAL: IPv4 vs IPv6)
+> [!IMPORTANT]
+> **Render IPv6 Gotcha**: Newer Supabase projects assign **IPv6-only** addresses to the direct host (`db.<project-ref>.supabase.co`). Render Web Services do **not** support IPv6 outbound routing by default. If you use the direct host from Render, your connection will fail with `UnknownHostException` or `Connection timed out`.
+>
+> **The Solution**: You MUST use the **Supabase Connection Pooler** (which resolves over IPv4).
+
+1. In Supabase Dashboard, go to **Project Settings** > **Database**.
+2. Scroll to **Connection Pooling** (or **Connection String** > **URI / JDBC**):
+   - **Mode**: Select **Session** (recommended for Spring Boot + Flyway on Port `5432`) or **Transaction** (Port `6543`).
+   - **Host**: `aws-0-<region>.pooler.supabase.com` (e.g., `aws-0-us-west-1.pooler.supabase.com`).
+   - **Port**: `5432` (Session mode) or `6543` (Transaction mode).
+   - **User**: `postgres.<your-project-ref>` (Note the dot and project ref suffix!).
+   - **Database**: `postgres`
+   - **Password**: Your database password.
+3. Your exact Render JDBC connection string should be:
    ```text
-   jdbc:postgresql://db.<your-project-ref>.supabase.co:5432/postgres?sslmode=require
+   jdbc:postgresql://aws-0-<region>.pooler.supabase.com:5432/postgres?sslmode=require
    ```
 
-### 1.4 Create the Private Document Storage Bucket
+### 1.4 Disable Email Confirmation for Initial Testing (Recommended)
+By default, Supabase requires users to click an email verification link before their session token is issued.
+1. In the Supabase sidebar, go to **Authentication** > **Providers** > **Email**.
+2. Toggle **Confirm email** to **OFF** (Disabled).
+3. Click **Save**.
+*(You can re-enable this later when you configure custom SMTP via Resend, SendGrid, or AWS SES).*
+
+### 1.5 Create the Private Document Storage Bucket
 1. In the Supabase sidebar, click **Storage**.
 2. Click **New bucket**.
 3. Enter bucket configuration:
@@ -95,14 +108,15 @@ Supabase provides the managed PostgreSQL database, authentication service, and p
    - **Public bucket**: **DISABLED / OFF** (Strict Option A security requirement: documents must remain strictly private).
 4. Click **Save bucket**.
 
-### 1.5 Database Schema Migration
-Rysoo handles database migrations automatically upon Spring Boot backend startup via Flyway (`V1__initial_schema.sql`). 
+### 1.6 Database Schema Migration & Auth Trigger
+Rysoo requires 10 application tables and a trigger on `auth.users` so that user profiles are created automatically upon signup:
 
-However, if you wish to pre-provision tables manually:
 1. In the Supabase sidebar, open the **SQL Editor**.
-2. Open [`supabase/migrations/20261020000001_initial_schema.sql`](file:///c:/Users/MANU/Desktop/rysoo/supabase/migrations/20261020000001_initial_schema.sql) in your local editor.
+2. Open [`supabase/migrations/20261020000001_initial_schema.sql`](file:///c:/Users/MANU/Desktop/rysoo/supabase/migrations/20261020000001_initial_schema.sql).
 3. Copy the entire file content, paste it into the Supabase SQL Editor, and click **Run**.
-4. Verify in **Table Editor** that 10 tables are present: `profiles`, `cv_documents`, `cv_versions`, `job_descriptions`, `optimization_projects`, `optimization_runs`, `optimization_results`, `export_files`, `usage_ledger`, and `processing_jobs`.
+4. This creates:
+   - 10 application tables (`profiles`, `cv_documents`, `cv_versions`, `job_descriptions`, `optimization_projects`, `optimization_runs`, `optimization_results`, `export_files`, `usage_ledger`, `processing_jobs`).
+   - The `on_auth_user_created` trigger which automatically copies new signups from `auth.users` into `public.profiles` (preventing foreign key violation errors on first upload).
 
 ---
 

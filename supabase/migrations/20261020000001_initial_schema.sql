@@ -153,3 +153,25 @@ CREATE TABLE IF NOT EXISTS processing_jobs (
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 CREATE INDEX IF NOT EXISTS idx_jobs_queue_poll ON processing_jobs(status, next_run_at, priority DESC);
+
+-- 11. Supabase Auth Integration: Auto-create Profile on User Signup
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO public.profiles (id, email, full_name)
+    VALUES (new.id, new.email, COALESCE(new.raw_user_meta_data->>'full_name', ''))
+    ON CONFLICT (id) DO NOTHING;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Drop trigger if already exists and recreate
+DO $$
+BEGIN
+    IF EXISTS (SELECT 1 FROM pg_tables WHERE schemaname = 'auth' AND tablename = 'users') THEN
+        DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+        CREATE TRIGGER on_auth_user_created
+            AFTER INSERT ON auth.users
+            FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
+    END IF;
+END $$;
