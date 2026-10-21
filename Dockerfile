@@ -51,7 +51,7 @@ RUN printf '#!/bin/sh\nset -e\nif [ "$#" -gt 0 ]; then\n  exec "$@"\nelif [ "$SE
 
 USER appuser:appgroup
 
-ENV JAVA_OPTS="-XX:+UseG1GC -XX:MaxRAMPercentage=75.0 -XX:+ExitOnOutOfMemoryError"
+ENV JAVA_OPTS="-Djava.net.preferIPv4Stack=true -XX:+UseG1GC -XX:MaxRAMPercentage=75.0 -XX:+ExitOnOutOfMemoryError"
 ENV SERVICE_TYPE="api"
 ENV PORT="8080"
 
