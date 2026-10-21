@@ -3,7 +3,7 @@
 ################################################################################
 # Stage 1: Build the Maven multi-module applications
 ################################################################################
-FROM eclipse-temurin:21-jdk-jammy AS builder
+FROM maven:3.9.6-eclipse-temurin-21 AS builder
 
 WORKDIR /build
 
@@ -16,9 +16,6 @@ COPY services/cv-document-processing/pom.xml services/cv-document-processing/
 COPY apps/api/pom.xml apps/api/
 COPY apps/worker/pom.xml apps/worker/
 
-# Install Maven in build container
-RUN apt-get update && apt-get install -y --no-install-recommends maven && rm -rf /var/lib/apt/lists/*
-
 # Pre-fetch Maven dependencies
 RUN mvn -B dependency:go-offline -DexcludeGroupIds=com.rysoo || true
 
@@ -30,7 +27,7 @@ COPY apps/ apps/
 RUN mvn -B clean package -DskipTests
 
 ################################################################################
-# Stage 2: Runtime Base & Execution Container
+# Stage 2: Unified Runtime Base
 ################################################################################
 FROM eclipse-temurin:21-jre-jammy AS runtime
 
@@ -47,6 +44,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf 
 COPY --from=builder --chown=appuser:appgroup /build/apps/api/target/api-1.0.0-SNAPSHOT.jar /app/api.jar
 COPY --from=builder --chown=appuser:appgroup /build/apps/worker/target/worker-1.0.0-SNAPSHOT.jar /app/worker.jar
 
+# Create reliable Linux entrypoint script (Unix LF line endings)
+RUN printf '#!/bin/sh\nset -e\nif [ "$#" -gt 0 ]; then\n  exec "$@"\nelif [ "$SERVICE_TYPE" = "worker" ]; then\n  echo "Starting Rysoo Background Worker..."\n  exec java $JAVA_OPTS -jar /app/worker.jar\nelse\n  echo "Starting Rysoo REST API on port ${PORT:-8080}..."\n  exec java $JAVA_OPTS -jar /app/api.jar\nfi\n' > /app/entrypoint.sh && \
+    chmod +x /app/entrypoint.sh && \
+    chown appuser:appgroup /app/entrypoint.sh
+
 USER appuser:appgroup
 
 ENV JAVA_OPTS="-XX:+UseG1GC -XX:MaxRAMPercentage=75.0 -XX:+ExitOnOutOfMemoryError"
@@ -58,18 +60,22 @@ EXPOSE 8080
 HEALTHCHECK --interval=15s --timeout=5s --start-period=30s --retries=3 \
   CMD curl -f http://localhost:${PORT:-8080}/actuator/health || exit 1
 
-ENTRYPOINT ["sh", "-c", "if [ \"$SERVICE_TYPE\" = \"worker\" ]; then exec java $JAVA_OPTS -jar /app/worker.jar; else exec java $JAVA_OPTS -jar /app/api.jar; fi"]
+ENTRYPOINT ["/app/entrypoint.sh"]
+CMD []
 
 ################################################################################
-# Stage 3: API Runtime Entry Point
+# Stage 3: Specific target for API (backwards-compatible with CI workflow)
 ################################################################################
 FROM runtime AS runtime-api
 ENV SERVICE_TYPE="api"
-ENTRYPOINT ["sh", "-c", "exec java $JAVA_OPTS -jar /app/api.jar"]
 
 ################################################################################
-# Stage 4: Worker Runtime Entry Point
+# Stage 4: Specific target for Worker (backwards-compatible with CI workflow)
 ################################################################################
 FROM runtime AS runtime-worker
 ENV SERVICE_TYPE="worker"
-ENTRYPOINT ["sh", "-c", "exec java $JAVA_OPTS -jar /app/worker.jar"]
+
+################################################################################
+# Stage 5: Final Default Target for Render builds (Defaults to API, respects $SERVICE_TYPE)
+################################################################################
+FROM runtime AS final

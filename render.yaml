@@ -5,7 +5,6 @@ services:
     env: docker
     dockerfilePath: ./Dockerfile
     dockerContext: .
-    dockerCommand: "java $JAVA_OPTS -jar /app/api.jar"
     plan: starter
     region: oregon
     healthCheckPath: /actuator/health
@@ -44,7 +43,6 @@ services:
     env: docker
     dockerfilePath: ./Dockerfile
     dockerContext: .
-    dockerCommand: "java $JAVA_OPTS -jar /app/worker.jar"
     plan: starter
     region: oregon
     autoDeploy: false
