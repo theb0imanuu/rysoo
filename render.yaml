@@ -6,7 +6,7 @@ services:
     dockerfilePath: ./Dockerfile
     dockerContext: .
     plan: starter
-    region: oregon
+    region: frankfurt
     healthCheckPath: /actuator/health
     autoDeploy: false
     envVars:
@@ -44,7 +44,7 @@ services:
     dockerfilePath: ./Dockerfile
     dockerContext: .
     plan: starter
-    region: oregon
+    region: frankfurt
     autoDeploy: false
     envVars:
       - key: SERVICE_TYPE

@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:8081}
+
+spring:
+  application:
+    name: rysoo-worker
+  datasource:
+    hikari:
+      maximum-pool-size: 3
+      minimum-idle: 1
+      idle-timeout: 30000
+      max-lifetime: 600000
+      connection-timeout: 30000
+      keepalive-time: 30000
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized

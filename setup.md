@@ -147,14 +147,14 @@ The repository includes an infrastructure blueprint ([`render.yaml`](file:///c:/
 
 Configure these environment variables for **both** `rysoo-api` and `rysoo-worker` (or use a shared **Render Environment Group**):
 
-| Environment Variable | Value / Description | Example |
+| Environment Variable | Value / Description | Example / Required Format |
 | :--- | :--- | :--- |
 | `SPRING_PROFILES_ACTIVE` | Set to `render` on API, `render,worker` on Worker | `render` |
-| `SPRING_DATASOURCE_URL` | Supabase PostgreSQL JDBC connection string | `jdbc:postgresql://db.<ref>.supabase.co:5432/postgres?sslmode=require` |
-| `SPRING_DATASOURCE_USERNAME` | Supabase DB user | `postgres` |
-| `SPRING_DATASOURCE_PASSWORD` | Supabase DB password | `<your-db-password>` |
-| `SUPABASE_URL` | Supabase Project URL | `https://<your-project-ref>.supabase.co` |
-| `SUPABASE_JWT_ISSUER` | Supabase JWT issuer URL | `https://<your-project-ref>.supabase.co/auth/v1` |
+| `SPRING_DATASOURCE_URL` | Supabase IPv4 Pooler Session URL (**Never use direct host on Render**) | `jdbc:postgresql://aws-0-eu-west-1.pooler.supabase.com:5432/postgres?sslmode=require` |
+| `SPRING_DATASOURCE_USERNAME` | Supabase pooler user (Must include `.<project-ref>`) | `postgres.polbulragrgkfjyadnqc` |
+| `SPRING_DATASOURCE_PASSWORD` | Supabase database password | `<your-db-password>` |
+| `SUPABASE_URL` | Supabase Project URL | `https://polbulragrgkfjyadnqc.supabase.co` |
+| `SUPABASE_JWT_ISSUER` | Supabase JWT issuer URL | `https://polbulragrgkfjyadnqc.supabase.co/auth/v1` |
 | `SUPABASE_STORAGE_BUCKET` | Storage bucket name | `cv-documents` |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase Service Role Secret Key | `eyJhbGciOi...` |
 | `AI_PRIMARY_PROVIDER` | AI model provider | `openai` |
@@ -300,14 +300,14 @@ SUPABASE_DB_USER=postgres
 SUPABASE_DB_PASSWORD=<secure-password>
 
 # ------------------------------------------------------------------------------
-# RENDER (Backend Environment Group)
+# RENDER (Backend Environment Group for rysoo-api and rysoo-worker)
 # ------------------------------------------------------------------------------
 SPRING_PROFILES_ACTIVE=render
-SPRING_DATASOURCE_URL=jdbc:postgresql://db.<your-project-ref>.supabase.co:5432/postgres?sslmode=require
-SPRING_DATASOURCE_USERNAME=postgres
-SPRING_DATASOURCE_PASSWORD=<secure-password>
-SUPABASE_URL=https://<your-project-ref>.supabase.co
-SUPABASE_JWT_ISSUER=https://<your-project-ref>.supabase.co/auth/v1
+SPRING_DATASOURCE_URL=jdbc:postgresql://aws-0-eu-west-1.pooler.supabase.com:5432/postgres?sslmode=require
+SPRING_DATASOURCE_USERNAME=postgres.polbulragrgkfjyadnqc
+SPRING_DATASOURCE_PASSWORD=<your-db-password>
+SUPABASE_URL=https://polbulragrgkfjyadnqc.supabase.co
+SUPABASE_JWT_ISSUER=https://polbulragrgkfjyadnqc.supabase.co/auth/v1
 SUPABASE_STORAGE_BUCKET=cv-documents
 SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOi...
 AI_PRIMARY_PROVIDER=openai
