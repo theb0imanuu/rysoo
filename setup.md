@@ -292,11 +292,11 @@ Store these in your secure password manager or CI vault:
 # ------------------------------------------------------------------------------
 # SUPABASE
 # ------------------------------------------------------------------------------
-SUPABASE_URL=https://<your-project-ref>.supabase.co
+SUPABASE_URL=https://polbulragrgkfjyadnqc.supabase.co
 SUPABASE_ANON_KEY=eyJhbGciOi...
 SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOi...
-SUPABASE_DB_URL=jdbc:postgresql://db.<your-project-ref>.supabase.co:5432/postgres?sslmode=require
-SUPABASE_DB_USER=postgres
+SUPABASE_DB_URL=jdbc:postgresql://aws-0-eu-west-1.pooler.supabase.com:5432/postgres?sslmode=require
+SUPABASE_DB_USER=postgres.polbulragrgkfjyadnqc
 SUPABASE_DB_PASSWORD=<secure-password>
 
 # ------------------------------------------------------------------------------
