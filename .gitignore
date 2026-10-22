@@ -40,6 +40,8 @@ build/
 .env.production.local
 *.pem
 *.key
+run-backend.ps1
+run-*.ps1
 
 # IDEs
 .idea/

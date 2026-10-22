@@ -1,0 +1,127 @@
+﻿theb0imanuu/ramani	7380bc035301dffed3c1985668b7cf4866a42b1f	chore: removed exposed api key from app.json	theb0imanuu	2026-02-09T10:58:15+03:00
+theb0imanuu/ramani	24d29d46d0cc07427ee774e9bcff1ab959462b58	docs: extract setup instructions to SETUP.md	theb0imanuu	2026-02-09T10:54:48+03:00
+theb0imanuu/ramani	3c40e4e5cd8a8cb8250baf1d012bc4b92b06b946	chore: cleanup temporary asset scripts	theb0imanuu	2026-02-09T10:48:14+03:00
+theb0imanuu/ramani	f4d95365fb79743ab39d61b792d3a9daef0a750b	chore: updated app assets with new logo and favicon	theb0imanuu	2026-02-09T10:43:50+03:00
+theb0imanuu/ramani	bdad1181dfa8003ec540e08f96bd4ce614fb6f40	Initial commit of Ramani project	theb0imanuu	2026-02-09T10:07:48+03:00
+theb0imanuu/belo	5a081260da58a6ef324c870bfe0915888f0b8cff	chore(docker): auto-run database seed script on docker image spin up	theb0imanuu	2026-09-30T14:34:18+03:00
+theb0imanuu/belo	337dc43de145955f9383738839f8732a2e50faf6	fix(branding): update logo asset references to belo_logo.svg	theb0imanuu	2026-09-30T14:25:27+03:00
+theb0imanuu/belo	505d2d7b400f57a7e82a8fa515e77170b82fb4dd	chore(git): add .agents directory to .gitignore and untrack files	theb0imanuu	2026-09-30T14:21:39+03:00
+theb0imanuu/belo	3b586c30289eb59b541a9cfc2297f934df75ecbb	docs(readme): add logo branding and tech stack badges	theb0imanuu	2026-09-30T14:18:21+03:00
+theb0imanuu/belo	9e8e355628be015ef91e04355a58fd115aba44fd	feat(ui): make layout responsive and add collapsible sidebar toggle	theb0imanuu	2026-09-30T14:09:35+03:00
+theb0imanuu/belo	06de9d345fd9d162a459bef3d45de9e763600447	Update docker-compose.yml to match expanded version with healthcheck start_period	theb0imanuu	2026-09-30T12:08:42+03:00
+theb0imanuu/belo	a11b4cef104f06b904cf58e7f5d1674776a46778	Format docker-compose.yml with clean services layout	theb0imanuu	2026-09-30T12:06:24+03:00
+theb0imanuu/belo	cee628bdfcf6010199b614539099ca163a0f1b25	Update minio-create-bucket image to bitnami/minio-client:latest	theb0imanuu	2026-09-30T12:00:40+03:00
+theb0imanuu/belo	10e10470c365f5f6bdc448b7d96e13536dec791f	Update MinIO image to cgr.dev/chainguard/minio:latest	theb0imanuu	2026-09-30T11:57:21+03:00
+theb0imanuu/belo	14402a4d4881c2e4cf95ca258a0ed7c7d9d60740	Update MinIO image to quay.io/minio/minio:latest	theb0imanuu	2026-09-30T11:53:35+03:00
+theb0imanuu/belo	ff38a685d5ea11d5e1539ea9affae4b9f2220f50	Include user and reporter names in AI generated draft responses, management queries, and ticket summaries	theb0imanuu	2026-09-30T11:49:48+03:00
+theb0imanuu/belo	c7a9b96a067a0fcae2fe643751bdbf4b8fbe3a72	Implement MinIO S3 object storage for attachments with Docker Compose integration	theb0imanuu	2026-09-30T11:42:26+03:00
+theb0imanuu/belo	cd31aa915fc6fd6bb660a76e756bb04bf53af127	Add comprehensive unit test suites for backend services and frontend components	theb0imanuu	2026-09-30T11:06:03+03:00
+theb0imanuu/belo	a767646a9d07ce5a37b90f130dce1cedcfb622df	Remove non-functional search bar from navbar	theb0imanuu	2026-09-30T10:29:44+03:00
+theb0imanuu/belo	29b6a783e94663757fc6ae8789a5d5193d4ae48f	Initial commit: Belo platform components	theb0imanuu	2026-09-30T10:11:43+03:00
+theb0imanuu/belo	e087b2fac3b4f865153f7351e810a7059cd65a34	feat(docker): wrap entire application as unified Docker container	theb0imanuu	2026-10-15T21:03:13+03:00
+theb0imanuu/rysoo	666f22697219ae5e63c89dbee9a69ce6de618394	docs: add comprehensive setup.md guide for Render, Vercel, and Supabase integration	theb0imanuu	2026-10-20T22:58:39+03:00
+theb0imanuu/rysoo	da4bfd3c6498d80632bade61e3d721d4ff5f645f	fix(ci): define RENDER_DEPLOY_HOOK at job level for deploy workflows	theb0imanuu	2026-10-20T22:48:52+03:00
+theb0imanuu/rysoo	ef54ebddd1e0e6c2cd1976357620f2c7a0057674	feat: complete Rysoo CV optimization platform with Option A architecture, Render Docker deployment, and zero-hallucination verification	theb0imanuu	2026-10-20T21:25:42+03:00
+theb0imanuu/rysoo	b5bf81a24247e99b745c8787cf0aacb9a9a52ba7	fix(ci): harden GitHub Actions workflows and configure mobile test runner	theb0imanuu	2026-10-20T22:43:23+03:00
+theb0imanuu/rysoo	56fc808f8e646eed9e1e82514d0b0bc8db736b8c	fix(docker): enforce -Djava.net.preferIPv4Stack=true to resolve Render IPv6 network unreachable	theb0imanuu	2026-10-21T11:27:30+03:00
+theb0imanuu/rysoo	b912066be774ec3c95a91f9c79c13de6ab6803f6	docs: add real-world setup gotchas (IPv4 pooler, auth trigger, dynamic port binding)	theb0imanuu	2026-10-21T11:09:34+03:00
+theb0imanuu/rysoo	fb123d38bdfff0cb312e464bfaf2008bdf43d917	fix(docker): use maven:3.9.6-eclipse-temurin-21 builder and robust entrypoint for Render	theb0imanuu	2026-10-21T11:19:02+03:00
+theb0imanuu/theb0imanuu	05c8a7bb5560c7dcae9bd4de1ab2d4fbdb35ba2b	Update README.md	theb0imanuu	2026-01-15T15:21:58+03:00
+theb0imanuu/theb0imanuu	181846bca0b4537449b9cf8ee73b36da46f114c5	Update README.md	theb0imanuu	2026-01-15T15:21:30+03:00
+theb0imanuu/theb0imanuu	55f798c375c23ad59a20204f84a96bcd57439b54	Update README.md	theb0imanuu	2026-01-15T15:20:57+03:00
+theb0imanuu/theb0imanuu	ec562472e8bfb63b9e68a487ce21dcf2a6667227	Update README.md	theb0imanuu	2026-01-15T15:19:56+03:00
+theb0imanuu/theb0imanuu	e37db192ecb19a91ad59313b1bb5ca1cde2ee5b0	Update README.md	theb0imanuu	2026-01-15T15:19:37+03:00
+theb0imanuu/theb0imanuu	7f363ad3f2cd75c77988d6edd9a82e002a3e989e	Update README.md	theb0imanuu	2026-01-15T15:19:08+03:00
+theb0imanuu/theb0imanuu	df993ec5be75ff54eb50df11df66e88b52178149	chore: Reset main branch to initial README only	theb0imanuu	2026-09-01T15:22:48+03:00
+theb0imanuu/theb0imanuu	30522700e4a0218a769fbdb5e234d1c8642c6155	feat: Build Apple-inspired minimalist Gamified Funko Pop Portfolio with Connect-RPC & Visitor Board	theb0imanuu	2026-09-01T15:00:30+03:00
+theb0imanuu/MDES	adfb7dcfbbd1dad74dbb663b205a7c8c347dc6f3	Add Linux Graphical Executable and Icon	theb0imanuu	2026-02-24T11:38:55+03:00
+theb0imanuu/MDES	7e0c1e049f9d6cc707c534e015c64749490fc590	Add Fyne GUI and Windows Release Binaries	theb0imanuu	2026-02-24T10:22:28+03:00
+theb0imanuu/MDES	0362f7b8330183fbad2729e9dc242b5cc053b70a	Update README to include release binaries locations	theb0imanuu	2026-02-24T09:35:52+03:00
+theb0imanuu/MDES	aefb7dd8ee5dc0b043fa4f5268b6add7c1712853	Merge changes and updated binaries	theb0imanuu	2026-02-24T09:30:07+03:00
+theb0imanuu/MDES	1c0416eab599f927ecf6a50b33dcb41d86b4a679	Update README with correct repository name	theb0imanuu	2026-02-24T09:25:30+03:00
+theb0imanuu/MDES	34dc3915bc789289aaf02667d172960a982eda4b	Update README with project details and instructions	theb0imanuu	2026-02-24T09:23:13+03:00
+theb0imanuu/MDES	c0cfacfb3cb323db9cad43cc69b9b12d3904b084	Add wait for exit on finish	theb0imanuu	2026-02-24T09:14:29+03:00
+theb0imanuu/MDES	ade87dddb6990f6ad3c0dbe4af909723e454affc	Initial commit	theb0imanuu	2026-02-24T09:05:57+03:00
+theb0imanuu/PharmaCheck	3822114aa2e5767c4a3e38952af289212a99d71f	Implement core features: Backend (Inventory, Auth, AI), Frontend (Dashboard, Predictor, Offline), Documentation	theb0imanuu	2026-02-19T00:28:11+03:00
+theb0imanuu/PharmaCheck	87de43a016b5f4c15a535681ca483fe3cf76488d	Initial commit: Project scaffolding and basic backend setup	theb0imanuu	2026-02-19T00:07:19+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	3fa2bcace050f2929328707a13d2284911474020	fix(ci): run build first in CI to generate proto and routeTree artifacts	theb0imanuu	2026-08-14T12:11:32+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	394f9803d1727fcb97f6fb177ec008ac954a6357	fix(ci): rewrite test.yml workflow to execute standalone unit tests on GitHub Actions	theb0imanuu	2026-08-14T12:27:04+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	6a24f5574f9f5e084c67976cf38528e8c6900416	fix(proto,client-user): generate proto files before typecheck & fix red50/red200 color tokens	theb0imanuu	2026-08-14T11:58:31+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	b96e47b6f1593c587a67ff6b1df61c90f9bc3774	fix(ci): replace invalid cache action with actions/cache@v4	theb0imanuu	2026-08-14T11:42:06+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	c22ede77a7dbcd6134b34f8d2c275652416a182a	docs: add engineering audit report and clean unused imports	theb0imanuu	2026-08-14T11:37:50+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	841401ce2bb17a2a55f303ac9e50b138c8fcdf18	audit: full repository verification, typecheck/lint fixes, query performance tests, fail-fast CI pipeline, and user logout support	theb0imanuu	2026-08-14T11:37:05+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	115a091a1f8d6149327467c62279b998f670a96a	task 5: Configure GitHub Actions CI pipeline, write development guide, and finalize security audit documentation	theb0imanuu	2026-08-14T10:54:55+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	35bb5896a210ae10001ab34ee7822842708240d6	task 4: Implement request tracing via AsyncLocalStorage, structured logging, unified error taxonomy mapping, and trust boundary tests	theb0imanuu	2026-08-14T10:52:54+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	53027de06dc84b80dda9442be59baa288982b4b6	task 3: Resolve systemic N+1 database queries in feed, posts, bookmarks, comments, and profile fetching, reducing query counts to constant time O(1)	theb0imanuu	2026-08-14T10:47:57+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	bbfa34b46622e215e570f4903a6f8703ff3b7b04	task 2: Realign trust boundary, remove client-side JWT token signing, and document Issue 1 findings and remediation	theb0imanuu	2026-08-14T10:44:38+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	c57776ef2c4dbecf7413ea397fcbacb5acc86438	task 1: Implement secure scrypt password hashing, SHA-256 verification fallback, and lazy migration on login	theb0imanuu	2026-08-14T10:44:06+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	ca83eb5b4aa08d8a26df8876d7e1c6a04cfacc76	task 0: Fix test setup, db client export, and teardown timeout issues	theb0imanuu	2026-08-14T10:43:55+03:00
+theb0imanuu/llm-web-refactoring-test-theb0imanuu	8abef296513c7a6bdb7b8b8c3bce9ebced9b3ec9	fix(ci): pre-generate proto definitions to prevent protoc file-lock race condition	theb0imanuu	2026-08-14T12:04:28+03:00
+theb0imanuu/WakiliSmart	6161523fab2b520c0c5194200d45da9f496281c5	chore: Update configurations	theb0imanuu	2026-04-16T18:38:05+03:00
+theb0imanuu/WakiliSmart	ae5a7c3196dbc3a1261d07967e42aaa99d345d32	docs: Add detailed monolithic project README	theb0imanuu	2026-04-16T18:22:35+03:00
+theb0imanuu/WakiliSmart	da943cba5373ca2c809c46ce2388969f405f6d4e	Deploy WakiliSmart Monorepo with Integrations	theb0imanuu	2026-04-16T18:16:07+03:00
+thunder-applications/swe-intern-technical-project-2027-theb0imanuu-5cec30f4	0e886037dbdb672a5482e86ccfc53b78e4a73f7f	Make ingest_raw_data script idempotent for container deployments	theb0imanuu	2026-09-24T13:09:35+03:00
+thunder-applications/swe-intern-technical-project-2027-theb0imanuu-5cec30f4	56daa7beeba8b8b2d3598a9d2d577f706444e9d5	Bind gunicorn to 0.0.0.0 for IPv4 Railway proxy compatibility	theb0imanuu	2026-09-24T12:33:07+03:00
+thunder-applications/swe-intern-technical-project-2027-theb0imanuu-5cec30f4	de4fee6f9198fc99c11a8244edafb7226d3f7f0c	Set backend domain in environment.prod.ts, update server.js host binding for Railway, and update SUBMISSION.md	theb0imanuu	2026-09-24T12:24:31+03:00
+thunder-applications/swe-intern-technical-project-2027-theb0imanuu-5cec30f4	1cdd3e178edd662f2dc608a2e794ada42614a622	Configure CORS_ALLOWED_ORIGINS for Railway production frontend	theb0imanuu	2026-09-24T13:06:22+03:00
+thunder-applications/swe-intern-technical-project-2027-theb0imanuu-5cec30f4	85f5784acd56256331fe8c301c4d8e7479025e81	Automate database migration and data ingestion on Railway container startup	theb0imanuu	2026-09-24T12:10:30+03:00
+thunder-applications/swe-intern-technical-project-2027-theb0imanuu-5cec30f4	2bc92188037e0fc5a46aa1d1453f5821e1ce2742	Complete OKC technical assessment deliverables: Backend API, Angular UI dashboard, and data analysis responses	theb0imanuu	2026-09-24T11:48:30+03:00
+theb0imanuu/trust-drop	ad1498d2d5d176854aedbe10808108f2b974de28	first commit	theb0imanuu	2026-01-29T11:00:26+03:00
+theb0imanuu/valentines	11d93363f92eaa9a864d8c0913fde8017cb736a6	fixed layout	theb0imanuu	2026-01-31T23:49:22+03:00
+theb0imanuu/valentines	ca345bd26506fe2b25e5ae571774169116d06d44	first commit	theb0imanuu	2026-01-31T23:43:54+03:00
+theb0imanuu/dsa_challenge	1e94594ed7180d62278e27ef27f968bc34f00187	Merge pull request #5 from theb0imanuu/exercism-sync/9623b9c367040a02 [Sync Solution] go/lasagna	theb0imanuu	2026-03-03T10:14:52+03:00
+theb0imanuu/dsa_challenge	e8799eb5c7a418e487f0f3bd014dd306f7dfedaa	Merge pull request #4 from theb0imanuu/exercism-sync/c7343b4a3066fae7 [Sync Solution] go/lasagna	theb0imanuu	2026-03-03T10:13:58+03:00
+theb0imanuu/dsa_challenge	afac3c63315dd225670a114d821d6cf0c08f0daf	Merge pull request #3 from theb0imanuu/exercism-sync/9f24091634b8cdcc [Sync Iteration] go/lasagna/1	theb0imanuu	2026-03-03T10:13:21+03:00
+theb0imanuu/dsa_challenge	f9a38543bb3a94dcc75650875f41cd3efa2723b3	Merge pull request #2 from theb0imanuu/exercism-sync/d0d2e03c930af99b [Sync Everything]	theb0imanuu	2026-03-03T10:12:55+03:00
+theb0imanuu/dsa_challenge	af3d6579b11da87f89d7d595117eea9cb2333d7b	Merge pull request #1 from theb0imanuu/exercism-sync/96d514cd293e5949 [Sync Track] go	theb0imanuu	2026-03-03T10:12:13+03:00
+theb0imanuu/dsa_challenge	e2e9e2f196e3b884239af03016f11d68f6123b0e	Did the FizzBuzz problem in JS	theb0imanuu	2025-12-30T22:59:19+03:00
+theb0imanuu/dsa_challenge	0319d0ba1e7c15d344e7f6f7aa3f20e78496a219	Did the FizzBuzz problem in Go	theb0imanuu	2025-12-30T22:31:02+03:00
+theb0imanuu/dsa_challenge	9da10b7f0d98b9b9141756786e858da705f02c2d	Created a function in Javascript	theb0imanuu	2025-12-30T22:16:03+03:00
+theb0imanuu/dsa_challenge	5e34e65f4beff30d911ed917e3ddf10de6e0ef23	Creatd my first fuction in go	theb0imanuu	2025-12-30T22:04:51+03:00
+theb0imanuu/dsa_challenge	2c231e50c17138e8582cd4fe8986a3c49f05cd52	Did Hello World	theb0imanuu	2025-12-30T21:55:02+03:00
+theb0imanuu/dsa_challenge	d5a4e6d105fa0fa8a1e0d334c458affc36b44595	Created README	theb0imanuu	2025-12-29T23:45:17+03:00
+theb0imanuu/dsa_challenge	645a4ee4ba1e4fc4302a97ce9e893677b14558aa	first commit	theb0imanuu	2025-12-29T23:16:03+03:00
+theb0imanuu/TrustDrop	a1ea6429a07a43c3ad52706e5347f06c813fba7d	doc: rewrite README to match actual technology stack	theb0imanuu	2026-02-23T12:18:57+03:00
+theb0imanuu/TrustDrop	63bd44e3872ffebd5b0025e96013f81bac2a8945	doc: update README	theb0imanuu	2026-02-23T12:16:10+03:00
+theb0imanuu/TrustDrop	52446e831e74fbffec88def19c0cc5ae1e3ecff7	fix: project errors, add missing fields, and update frontend integration	theb0imanuu	2026-02-23T12:08:59+03:00
+theb0imanuu/TrustDrop	0acfdd7bc23f9a833d49e16ffc9838fcb0835e79	added favicon	theb0imanuu	2026-01-29T14:59:58+03:00
+theb0imanuu/TrustDrop	9b77dedaf5b1a69448c8c103ce957fbd590b1ce7	removed backend/	theb0imanuu	2026-01-29T14:45:47+03:00
+theb0imanuu/TrustDrop	71ba982bfa321c5fbedc575760faf80976bdb7bb	added README	theb0imanuu	2026-01-29T13:56:45+03:00
+theb0imanuu/wida	92135debe048872c934557ae64d0372df10d5e67	Updated repo	theb0imanuu	2026-02-28T23:45:05+03:00
+theb0imanuu/wida	189a020853b8aef2822994b116ae1555aa11b475	Updated repo	theb0imanuu	2026-02-28T23:44:36+03:00
+theb0imanuu/salam	9766f7a8a4b1e23d1bc104fe3095cce317d31cee	chore: rebuild all project assets for release	theb0imanuu	2026-02-22T20:58:50+03:00
+theb0imanuu/salam	6f57f79c0d269eaa5ddb889970ef5dc521d17be2	fix(tui): fix command execution and improve interactive dialogue UX	theb0imanuu	2026-02-22T20:49:07+03:00
+theb0imanuu/salam	26e9463f33ca9160fe82442e3ebbea5f07160d7b	feat: implement interactive command dialogue in TUI	theb0imanuu	2026-02-22T20:41:00+03:00
+theb0imanuu/salam	76a23112a2bb0d3e6fc218e55fec5ace93e09d39	feat: implement fully interactive TUI dashboard	theb0imanuu	2026-02-22T20:06:37+03:00
+theb0imanuu/salam	ceef1ec52e55143f66f18980320d11bb93d4f90e	docs: use reliable Go version badge in README	theb0imanuu	2026-02-22T19:53:43+03:00
+theb0imanuu/salam	b53801c318866b0d19d01f9ea189f55f475d42ec	fix: default to check command and fix windows exit issue	theb0imanuu	2026-02-22T19:45:45+03:00
+theb0imanuu/salam	71cf57ba8cba5a798afc35da536232f640b26fd1	docs: comprehensive README, setup instructions, and MIT license	theb0imanuu	2026-02-22T19:12:49+03:00
+theb0imanuu/salam	7a8826b4611da27edda9398cf6fe5c22554b3a2a	feat: add automated installation script	theb0imanuu	2026-02-22T19:09:32+03:00
+theb0imanuu/salam	ed56e856f5533acbddd67df0c8e6f98085913b49	refactor: extract shared data models to resolve import cycles	theb0imanuu	2026-02-22T19:09:26+03:00
+theb0imanuu/kazana	4a9a5c1e83d71c466da84ee9df55119c5b7790d2	Update database implementation and schema set up	theb0imanuu	2026-08-09T17:51:43+03:00
+theb0imanuu/kazana	3691c4410120f6d06f997aebd4b5419b4b4a776a	feat(documents): implement document management with file size/MIME validation and Azure Blob Storage provider	theb0imanuu	2026-08-09T21:51:20+03:00
+theb0imanuu/kazana	00056063699053d8075bf685fbc0eb196bb4e106	feat(templates): implement Templates module with placeholders variable parser and user boundaries	theb0imanuu	2026-08-09T23:06:03+03:00
+theb0imanuu/kazana	08bb631f35a7c9f83ada8d4aea630f41c066bd6e	feat(activities-reminders): implement Activities and Reminders modules with CRUD, Note logs, reminder notifications and custom filters	theb0imanuu	2026-08-09T22:56:01+03:00
+theb0imanuu/kazana	489f1460bf05023ce6f48340da04ec50df60d1c7	feat(interviews-contacts): establish contact association with interviews, run migrations, and implement Contacts and Interviews CRUD modules	theb0imanuu	2026-08-09T20:25:12+03:00
+theb0imanuu/kazana	f06e74bbd04a435cb36cfb8157f79f55b60ba9ce	feat(redis-queues): implement background processing using Redis, BullMQ, and ioredis with email/reminder queues and processors	theb0imanuu	2026-08-09T23:14:05+03:00
+theb0imanuu/kazana	9c424b0ce5cb584b52d1ccc5476bf04a7b84c39b	feat(analytics): implement Analytics module dashboard aggregates with strict user isolation	theb0imanuu	2026-08-09T23:23:42+03:00
+theb0imanuu/kazana	8683f38dedbbcbdf632c9e280631589499ef98d9	feat(hardening): add LoggingInterceptor, format response wrapper to {data, meta}, and enhance worker resiliency	theb0imanuu	2026-08-09T23:34:20+03:00
+theb0imanuu/kazana	66780a534b8b0b23077b22404d18dd3959fa9a2f	Update backend implementation	theb0imanuu	2026-08-09T17:23:39+03:00
+theb0imanuu/kazana	bc4ef6686de6368052d7d4b5a054785583f68fe4	First iteration of backend implementation	theb0imanuu	2026-08-08T21:28:03+03:00
+theb0imanuu/kazana	6bc373b5349da85e39ba3fa30ae64ff29c0ed8b2	feat(jobs-companies): implement Companies and Jobs CRUD with searching, filtering, pagination, and status activity logs	theb0imanuu	2026-08-09T19:43:58+03:00
+theb0imanuu/kazana	956788a46765cfff70ca8a27a5e1dcdf895a25ad	feat(auth): implement JWT authentication module, custom decorators, and unit tests	theb0imanuu	2026-08-09T18:59:01+03:00
+theb0imanuu/kazana	ca80845e5ad20e09ecd7fe6e078400ce5b085fc9	feat(users): implement Users profile management module and unit tests	theb0imanuu	2026-08-09T19:14:26+03:00
+theb0imanuu/kazana	6909eef11d5c559c5274b334d58d968f83d0a407	ci: fix Azure startup command path to dist/src/main.js	theb0imanuu	2026-08-11T12:35:49+03:00
+theb0imanuu/kazana	4ed5c24298174f4c1b99a80e7becf23909b0b80f	ci: remove unsupported startup-command parameter	theb0imanuu	2026-08-11T12:38:51+03:00
+theb0imanuu/kazana	ac7e0c6bda6fed745fc60634a013a7187335ed0d	feat: support REDIS_URL environment variable as alternative to host/port	theb0imanuu	2026-08-11T12:55:08+03:00
+theb0imanuu/kazana	1decf9d3311801bfbdfad352c1c80a6e1aabf575	ci: preserve generated Prisma Client during npm prune	theb0imanuu	2026-08-11T13:10:22+03:00
+theb0imanuu/kazana	18987ee4365c9bfc8ae98fb244fe72a8416c3759	Added Azure Github Actions workflow	theb0imanuu	2026-08-11T10:40:12+03:00
+theb0imanuu/kazana	5c8ef6eca335f6f9b90447daaf8af3580f29d8da	ci: configure frontend deployment to GitHub Pages and backend to Azure Web Apps	theb0imanuu	2026-08-11T11:02:48+03:00
+theb0imanuu/kazana	c1d4d5e1fc38a110dc5fce31ec1d284e1ff22fba	ci: make VITE_API_URL dynamic using GitHub secret	theb0imanuu	2026-08-11T13:59:33+03:00
+theb0imanuu/kazana	dba8008a722f23d7e547e05fc99d292b6c71c0f8	ci: add JWT_EXPIRES_IN env to backend test jobs	theb0imanuu	2026-08-11T11:28:52+03:00
+theb0imanuu/kazana	adb574549a2f5a2ae95f843827e1e22cd3fbb275	feat(testing-verification): complete application verification, backend/frontend builds and testing, dockerfiles and workflows	theb0imanuu	2026-08-10T22:58:06+03:00
+theb0imanuu/kazana	255314a7c2592a9d7171139a67902e1396ded3c1	feat(frontend-foundation): configure Tailwind CSS v4, secure routes, Axios apiClient, Zustand stores, and Apple UI controls	theb0imanuu	2026-08-10T00:35:58+03:00
+theb0imanuu/kazana	300f3a6593ab6de1cdd3813a170e8e2d13a49244	ci: fix setup-node cache-dependency-path for monorepo structure	theb0imanuu	2026-08-11T11:20:19+03:00
+theb0imanuu/kazana	b15f2c8940954fde92d7db00ac5d8266708ef35e	ci: fix backend Dockerfile CMD path to dist/src/main	theb0imanuu	2026-08-12T09:38:16+03:00
+theb0imanuu/afya-digital	ffb2568253aea187ed290fa3b7999eafc75ca31c	Update README badges to use badgen.net	theb0imanuu	2026-02-09T09:10:42+03:00
+theb0imanuu/afya-digital	d7080b9b8294a1bdaca0dce5c7349cad46443c6e	Update project files	theb0imanuu	2026-02-09T09:01:59+03:00
