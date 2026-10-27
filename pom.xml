@@ -29,7 +29,7 @@
         <testcontainers.version>1.20.1</testcontainers.version>
         <tika.version>2.9.2</tika.version>
         <pdfbox.version>3.0.3</pdfbox.version>
-        <poi.version>5.3.0</poi.version>
+        <poi.version>6.0.0</poi.version>
         <commonmark.version>0.22.0</commonmark.version>
     </properties>
 
